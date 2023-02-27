@@ -1,0 +1,111 @@
+Paradigme de programmation :
+Un paradigme de programmation est un style fondamental de programmation informatique qui traite de la manière dont les solutions aux problèmes doivent être formulées dans un langage de programmation
+
+Programmation procédural :
+La programmation procédurale est un paradigme de programmation basé sur le concept d'appel procédural. Une procédure,contient simplement une série d'étapes à réaliser. 
+
+Programmation orienté objets : 
+La programmation orientée objet (POO) ou programmation par objet, est un paradigme de programmation informatique qui consiste en la définition et l'assemblage d’objets ; un objet représente un concept, une idée ou toute entité du monde physique, comme une voiture, une personne ou encore une page d'un livre.
+
+Namespace :
+Un espace de nom ou namespace représente un moyen de séparer les éléments au sein du code de telle sorte à éviter les conflits . Ces conflits sont dus à des duplications de noms (ou identifiants) d'éléments comme les fonctions, les constantes. 
+Les namespaces font alors en sorte de créer comme des répertoires abstraits qui permettent d'encapsuler les éléments et prévenir ainsi tout risque de conflit. Toutefois, ils ont aussi un autre rôle qui consiste à créer des alias (des noms alternatifs) plus simples pour les éléments qui ont des noms trop longs ou trop compliqués. 
+
+Classe :
+une classe déclare des propriétés communes à un ensemble d'objets. La classe déclare des attributs représentant l'état des objets et des méthodes représentant leur comportement.
+	
+    Class Personne :
+		def  __init__(self,nom) :
+			self.nom = ‘Dave’
+
+Classe concrète :
+une classe concrète est une classe instanciable. L’instanciation consiste en la création d’objets a partir de la classe.
+
+Classe abstraite :
+Une classe abstraite est une classe qu’on ne peut pas instancier.
+
+Attributs :
+Les attributs sont des variables qui permettent de stocker les informations d’un objet
+
+Attributs d’une instance :
+Les variables d’instance sont créées lorsqu’un objet est créé et détruites lorsque l’objet est détruit.
+
+		person = Personne()
+
+Attributs d’une classe : 
+Les variables de classe sont créées lors de l’exécution du programme et détruites à l’arrêt du programme.
+
+		Person.nom
+
+Methodes : 
+En programmation orientée objet (POO), les méthodes sont des fonctions définies dans une classe et peuvent être appelées sur des objets de cette classe.
+
+	Class Personne :
+		def   date_naiss(self) :
+			self.date = ‘12-12-2005’
+			return self.date
+	person.datenaiss()
+
+Méthodes d'instances : 
+Une méthode d'instance est une méthode qui agit sur une instance d'une classe. Elle peut accéder et modifier l'état de l'objet sur lequel elle est appelée.
+
+Méthodes statiques : 
+Une méthode statique est une méthode qui est associée à une classe plutôt qu'à une instance de cette classe. Elle peut être appelée sans créer une instance de la classe et ne peut pas accéder à l'état d'un objet. 
+
+Constructeurs : 
+Un constructeur est un type spécial de méthode utilisé pour créer et initialiser des objets d'une classe. Il porte le même nom que la classe et est invoqué automatiquement lorsqu'un objet de la classe est créé. Les constructeurs peuvent être utilisés pour définir les valeurs initiales des champs de l'objet .
+
+	Class Personne :
+		def  __init__(self,nom) :
+			self.nom = ‘Dave’
+
+Encapsulation :
+l'encapsulation est un concept clé de la POO qui permet de protéger les données et les méthodes d'une classe en limitant leur accès. 
+
+La visibilité ou portée d'un attribut ou d'une méthode : 
+définit la manière dont la variable ou la méthode est accessible à partir d'autres parties du programme.
+
+Les getters et les setters :
+sont des méthodes publiques qui sont utilisées pour accéder à et modifier les attributs privés d'une classe, respectivement. 
+
+	Class Personne :
+		def  __init__(self,nom) :
+			self.nom = ‘Dave’
+		def  getNom(self) :
+			return self.nom
+		def  setNom(self,nouveau_nom) :
+			self.nom = nouveau_nom
+
+Surcharge :
+la surcharge est une technique en POO qui permet de définir plusieurs méthodes ayant le même nom mais des signatures différentes 
+
+Objet :
+Un objet est une instance d'une classe qui représente une entité du monde réel 
+
+	person = Personne()
+
+La navigabilité entre les classes : 
+décrit la direction dans laquelle les instances d'une classe peuvent naviguer vers les instances d'une autre classe dans une relation.
+
+OneToMany : 
+une relation où une instance d'une classe est associée à plusieurs instances d'une autre classe.
+
+ManyToOne : une relation où plusieurs instances d'une classe sont associées à une instance d'une autre classe.
+
+ManyToMany : 
+une relation où plusieurs instances d'une classe sont associées à plusieurs instances d'une autre classe.
+
+OneToOne : 
+une relation où une instance d'une classe est associée à une seule instance d'une autre classe, et vice versa.
+
+Héritage :
+L'héritage est une relation entre deux classes où une classe (appelée classe fille) hérite des propriétés et des comportements d'une autre classe (appelée classe mere). 
+
+La redéfinition : 
+est une technique qui permet à une classe dérivée de fournir sa propre implémentation d'une méthode de sa classe mere . La méthode redéfinie dans la classe dérivée doit avoir la même signature que la méthode dans la classe de base.
+
+Le polymorphisme : 
+est une technique qui permet à une méthode d'accepter des objets de différentes classes qui ont des interfaces (ou des signatures de méthode) similaires. Cela permet à une méthode de traiter les objets sans avoir à connaître leur classe spécifique. 
+
+Les interfaces :
+permettent de créer un nouveau type 
