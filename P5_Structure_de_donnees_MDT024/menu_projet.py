@@ -25,7 +25,7 @@ while mon_choix in [1, 2, 3, 4, 5, 6, 7, 8]:
         affiche_info(numero,valide)
     elif mon_choix == 3:
         affiche_cinq_premiers(valideMoy)
-    elif choix == 4:
+    elif mon_choix == 4:
         ajouter()
     elif mon_choix == 6:
         choix = int(input("Donner le numero de la page a afficher : "))
