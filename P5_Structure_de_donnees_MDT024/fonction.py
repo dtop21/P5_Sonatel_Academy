@@ -363,7 +363,25 @@ def affiche_cinq_premiers(tab):
             print('\n') 
             j +=1
     if bol == False :
-        print("veuillez entrer une classe valide")       
+        print("veuillez entrer une classe valide")   
+        
+def ajouter():
+    tab = []
+    code = input("Donner le code : ")
+    numero = input("Donner le numero : ")
+    nom = input("Donner le nom : ")
+    prenom = input("Donner le prenom : ")
+    date = input("Donner la date de naissance : ")
+    classe = input("Donner le classe : ")
+    note = input("Donner les notes : ")
+    tab.append([code,numero,nom,prenom,date,classe,note])
+    tab = format_date(tab)
+    tab = format_classe(tab)
+    tab = controle_numero(tab)
+    tab = controle_prenom(tab)
+    tab = controle_nom(tab)
+    tab = calcul_moyenne(tab)    
+    
 def format_sortie(format):
     if format == 'CSV':
         choix = input("Choisissez le format de fichier pour les données valides (JSON,XML) : ")
