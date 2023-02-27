@@ -363,8 +363,7 @@ def affiche_cinq_premiers(tab):
             print('\n') 
             j +=1
     if bol == False :
-        print("veuillez entrer une classe valide")
-        
+        print("veuillez entrer une classe valide")       
 def format_sortie(format):
     if format == 'CSV':
         choix = input("Choisissez le format de fichier pour les données valides (JSON,XML) : ")
