@@ -13,22 +13,22 @@ class Etudiant:
 
 class Etudiants:
     def __init__(self, fichier):
-        tab = []
+        self.tab = []
         with open(fichier, encoding='UTF-8') as mon_fichier:
             mon_fichier_reader = csv.reader(mon_fichier, delimiter=',')
             for row in mon_fichier_reader:
-                self.code = row[0]
-                self.numero = row[1]
-                self.nom= row[2]
-                self.prenom = row[3]
-                self.date_naiss = row[4]
-                self.classe= row[5]
+                code = row[0]
+                numero = row[1]
+                nom= row[2]
+                prenom = row[3]
+                date_naiss = row[4]
+                classe= row[5]
                 notes = row[6]
                 etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes)
                 self.tab.append(etudiant)
     
-    def afficher():
-        for x in tab:
+    def afficher(self):
+        for x in self.tab:
             print(x)
     
 etu = Etudiants('Donnees_Projet_Python_DataC5.csv')
