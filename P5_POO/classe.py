@@ -1,7 +1,9 @@
 import csv
 
 class Etudiant:
+    
     def __init__(self,code,numero,nom,prenom,date_naiss,classe,notes):
+        
         self.code= code
         self.numero = numero
         self.nom = nom
@@ -10,9 +12,14 @@ class Etudiant:
         self.classe = classe
         self.notes = notes
     
-
+    def __str__(self):
+        
+        return f"{self.code},{self.numero},{self.nom},{self.prenom},{self.date_naiss},{self.classe},{self.notes}"
+    
 class Etudiants:
+    
     def __init__(self, fichier):
+        
         self.tab = []
         with open(fichier, encoding='UTF-8') as mon_fichier:
             mon_fichier_reader = csv.reader(mon_fichier, delimiter=',')
@@ -27,10 +34,13 @@ class Etudiants:
                 etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes)
                 self.tab.append(etudiant)
     
+   
     def afficher(self):
+        
         for x in self.tab:
-            print(x)
+            print(x)   
+    
     
 etu = Etudiants('Donnees_Projet_Python_DataC5.csv')
-etu.afficher()
 
+etu.afficher()
