@@ -353,12 +353,12 @@ class Etudiants:
         note = input("Donner les notes : ")
         etudiant = Etudiant(code,numero,nom,prenom,date,classe,note)
         self.tab.append(etudiant)
-        self.tab = format_date()
-        tab = format_classe(tab)
-        tab = controle_numero(tab)
-        tab = controle_prenom(tab)
-        tab = controle_nom(tab)
-        tab = calcul_moyenne(tab)    
+        self.tab = etudiant.format_date()
+        self.tab = etudiant.format_classe()
+        self.tab = etudiant.controle_numero()
+        self.tab = etudiant.controle_prenom()
+        self.tab = etudiant.controle_nom()
+        self.tab = etudiant.calcul_moyenne()    
             
 
 etu = Etudiants('Donnees_Projet_Python_DataC5.csv')
@@ -368,9 +368,10 @@ tableau_valide = etu.controle_numero()
 tableau_valide  = etu.controle_prenom()
 tableau_valide  = etu.controle_nom()
 tableau_valide = etu.calcul_moyenne()
+etu
 # num = input("NUMERO : ")
 # etu.affiche_info(num)
-etu.affiche_cinq_premiers()
+#etu.affiche_cinq_premiers()
 # for x in tableau_valide :
 #     print(x)
 
