@@ -308,8 +308,6 @@ class Etudiants:
             x.moy_gen = round(m / i,2)
             x.notes = result 
             valide.append(x)
-            # moy_general = str(moy_general)
-            # valideMoy.append([x,moy_general])
             result = ''
             m = 0
             i = 0
@@ -343,7 +341,8 @@ class Etudiants:
         if bol == False :
             print("veuillez entrer une classe valide")   
 
-    def ajouter(self):
+    def ajouter(self,et):
+        self.tab = []
         code = input("Donner le code : ")
         numero = input("Donner le numero : ")
         nom = input("Donner le nom : ")
@@ -351,14 +350,15 @@ class Etudiants:
         date = input("Donner la date de naissance : ")
         classe = input("Donner le classe : ")
         note = input("Donner les notes : ")
-        etudiant = Etudiant(code,numero,nom,prenom,date,classe,note)
+        moy_gen = 0
+        etudiant = Etudiant(code,numero,nom,prenom,date,classe,note,moy_gen)
         self.tab.append(etudiant)
-        self.tab = etudiant.format_date()
-        self.tab = etudiant.format_classe()
-        self.tab = etudiant.controle_numero()
-        self.tab = etudiant.controle_prenom()
-        self.tab = etudiant.controle_nom()
-        self.tab = etudiant.calcul_moyenne()    
+        self.tab = et.format_date()
+        self.tab = et.format_classe()
+        self.tab = et.controle_numero()
+        self.tab = et.controle_prenom()
+        self.tab = et.controle_nom()
+        self.tab = et.calcul_moyenne()    
             
 
 etu = Etudiants('Donnees_Projet_Python_DataC5.csv')
@@ -368,12 +368,12 @@ tableau_valide = etu.controle_numero()
 tableau_valide  = etu.controle_prenom()
 tableau_valide  = etu.controle_nom()
 tableau_valide = etu.calcul_moyenne()
-etu
 # num = input("NUMERO : ")
 # etu.affiche_info(num)
-#etu.affiche_cinq_premiers()
-# for x in tableau_valide :
-#     print(x)
+# etu.affiche_cinq_premiers()
+# etu.ajouter(etu)
+for x in tableau_valide :
+    print(x)
 
 # for x in invalide :
 #     print(x)
