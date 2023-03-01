@@ -359,6 +359,19 @@ class Etudiants:
         self.tab = et.controle_prenom()
         self.tab = et.controle_nom()
         self.tab = et.calcul_moyenne()    
+        
+    def afficher_par_5(self, page):
+        elements_par_page = 5
+        d = (page - 1) * elements_par_page
+        f = d + elements_par_page
+        for e in self.tab[d:f]:
+            print(e)
+    def afficher_par_X(self, page):
+        elements_par_page = int(input("\nDonner le nombre de lignes que vous voulez aficher : "))
+        d = (page - 1) * elements_par_page
+        f = d + elements_par_page
+        for e in self.tab[d:f]:
+            print(e)
             
 
 etu = Etudiants('Donnees_Projet_Python_DataC5.csv')
