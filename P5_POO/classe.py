@@ -1,4 +1,5 @@
-import csv
+import csv,json,xml.etree.ElementTree as ET
+
 
 t1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
       'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -29,22 +30,88 @@ class Etudiant:
     
 class Etudiants:
     
-    def __init__(self, fichier):
+    def __init__(self, fichier,format):
         
         self.tab = []
-        with open(fichier, encoding='UTF-8') as mon_fichier:
-            mon_fichier_reader = csv.reader(mon_fichier, delimiter=',')
-            for row in mon_fichier_reader:
-                code = row[0]
-                numero = row[1]
-                nom= row[2]
-                prenom = row[3]
-                date_naiss = row[4]
-                classe= row[5]
-                notes = row[6]
-                moy_gen = 0
-                etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes,moy_gen)
-                self.tab.append(etudiant)
+        if format == 'CSV':
+            with open(fichier, encoding='UTF-8') as mon_fichier:
+                mon_fichier_reader = csv.reader(mon_fichier, delimiter=',')
+                for row in mon_fichier_reader:
+                    code = row[0]
+                    numero = row[1]
+                    nom= row[2]
+                    prenom = row[3]
+                    date_naiss = row[4]
+                    classe= row[5]
+                    notes = row[6]
+                    moy_gen = 0
+                    etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes,moy_gen)
+                    self.tab.append(etudiant)
+                    
+        elif format == 'JSON':
+            with open(fichier, newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    code = row[0]
+                    numero = row[1]
+                    nom= row[2]
+                    prenom = row[3]
+                    date_naiss = row[4]
+                    classe= row[5]
+                    notes = row[6]
+                    moy_gen = 0
+                    etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes,moy_gen)
+                    self.tab.append(etudiant)
+            with open(fichier, 'w') as jsonfile:
+                json.dump(self.tab, jsonfile)
+        elif format == 'XML':
+            with open(fichier, newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    code = row[0]
+                    numero = row[1]
+                    nom= row[2]
+                    prenom = row[3]
+                    date_naiss = row[4]
+                    classe= row[5]
+                    notes = row[6]
+                    moy_gen = 0
+                    etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes,moy_gen)
+                    self.tab.append(etudiant)
+            eleves = ET.Element("eleves")
+            for x in self.tab:
+                eleve = ET.SubElement(eleves, "eleve") 
+                numero = ET.SubElement(eleve, "numero")
+                numero.text = x.numero 
+                nom = ET.SubElement(eleve,"nom")
+                nom.text = x.nom
+                prenom = ET.SubElement(eleve,"prenom")
+                prenom.text = x.prenom
+                date_naiss = ET.SubElement(eleve,"date_naiss")
+                date_naiss.text = x.date_naiss
+                classe = ET.SubElement(eleve,"classe")
+                classe.text = x.classe
+                note = ET.SubElement(eleve,"note")
+                note.text = x.note
+                
+            tree = ET.ElementTree(eleves)
+            tree.write(fichier,encoding="UTF-8", xml_declaration=True)
+        else:
+            print("Enter un bon format (CSV, JSON ou XML)")
+        
+        # with open(fichier, encoding='UTF-8') as mon_fichier:
+        #     mon_fichier_reader = csv.reader(mon_fichier, delimiter=',')
+        #     for row in mon_fichier_reader:
+        #         code = row[0]
+        #         numero = row[1]
+        #         nom= row[2]
+        #         prenom = row[3]
+        #         date_naiss = row[4]
+        #         classe= row[5]
+        #         notes = row[6]
+        #         moy_gen = 0
+        #         etudiant = Etudiant(code,numero,nom,prenom,date_naiss,classe,notes,moy_gen)
+        #         self.tab.append(etudiant)
                 
     def format_classe(self):
         valideC = []
@@ -374,19 +441,20 @@ class Etudiants:
             print(e)
             
 
-etu = Etudiants('Donnees_Projet_Python_DataC5.csv')
-tableau_valide = etu.format_classe()
-tableau_valide  = etu.format_date()
-tableau_valide = etu.controle_numero()
-tableau_valide  = etu.controle_prenom()
-tableau_valide  = etu.controle_nom()
-tableau_valide = etu.calcul_moyenne()
-# num = input("NUMERO : ")
-# etu.affiche_info(num)
-# etu.affiche_cinq_premiers()
-# etu.ajouter(etu)
-for x in tableau_valide :
-    print(x)
+format = input("format du fichier : ")
+etu = Etudiants('Donnees_Projet_Python_DataC5.csv',format)
+# tableau_valide = etu.format_classe()
+# tableau_valide  = etu.format_date()
+# tableau_valide = etu.controle_numero()
+# tableau_valide  = etu.controle_prenom()
+# tableau_valide  = etu.controle_nom()
+# tableau_valide = etu.calcul_moyenne()
+# # num = input("NUMERO : ")
+# # etu.affiche_info(num)
+# # etu.affiche_cinq_premiers()
+# # etu.ajouter(etu)
+# for x in tableau_valide :
+#     print(x)
 
 # for x in invalide :
 #     print(x)
