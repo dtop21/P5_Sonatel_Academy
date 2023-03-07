@@ -1,0 +1,856 @@
+algorithme partie1_Exo1
+
+variable
+	entier a,b,q,r
+	reel rr
+debut
+	ecrire("Donner un entier")
+	lire(a)
+	ecrire("Donner un entier")
+	lire(a)
+
+	q  <- a div b
+	r  <- a mod b
+	rr <- a/b
+
+	ecrire("Le quotient de la division de ", a ," sur ", b ," est : ", q)
+	ecrire("Le reste de la division de ", a ," sur ", b ," est : ", r)
+	ecrire("Le ratio de la division de ", a ," sur ", b ," est : ", rr)
+	
+fin
+
+
+algorithme partie1_Exo2
+
+variable
+	reel a,b,c,d,e
+debut
+	ecrire("donner une mesure en dm")
+	lire(a)
+
+	b <- a / 1000
+	c <- a / 10
+	d <- a * 10
+	e <- a * 100
+
+	ecrire(a , " = " , b , " hm")
+	ecrire(a , " = " , c , " m")
+	ecrire(a , " = " , d , " cm")
+	ecrire(a , " = " , e , " mm")	
+fin
+
+
+algorithme partie1_Exo3
+
+variable
+	reel a,b
+debut
+	ecrire("donner une temperature en °C")
+	lire(a)
+
+	b <- (a * 9 / 5) + 32
+
+	ecrire(a ," °C = ", b , " °F")	
+fin
+
+
+algorithme partie1_Exo4
+
+variable
+	reel a,b,c
+debut
+	ecrire("donner la rayon ")
+	lire(a)
+
+	b <- a * a * 3.14
+	c <- 2 * 3.14 * a
+
+	ecrire("la surface du cercle de rayon " , a , " est ",b)
+	ecrire("le perimetre du cercle de rayon " , a , " est ",c)
+	
+fin
+
+
+algorithme partie1_Exo5
+
+variable
+	reel a,b,c,d,e
+debut
+	ecrire("donner la longueur et la largeur ")
+	lire(a,b)
+
+	c <- (a * b) * 2
+	d <- a * b
+	e <- racine(a * a + b * b)
+
+	ecrire("la surface du rectangle de longueur " , a , " et de largeur " , b , " est ", c)
+	ecrire("le perimetre du rectangle de longueur " , a , " et de largeur " , b , " est ", c)
+	ecrire("la longueur d'un diagonale est ", c)
+
+fin
+
+
+algorithme partie1_Exo6
+
+variable
+	reel a,b,c
+debut
+	ecrire("donner une monnaie en CFA")
+	lire(a)
+
+	b <- a / 603 
+	c <- a / 742 
+
+	ecrire(a , " CFA = " , b , " $")
+	ecrire(a , " CFA = " , c , " £")
+	
+fin
+
+
+algorithme partie1_Exo7
+
+variable
+	reel a,b,c,d,e
+debut
+	ecrire("donner trois resistance)
+	lire(a,b,c)
+
+	e <- a + b + c 
+	d <- (a * b * c) / (a * b + b * c + a * c) 
+
+	ecrire("la resistance en serie est egale a " , e)
+	ecrire("la resistance en serie est egale a " , d)
+	
+fin
+
+
+algorithme partie1_Exo8
+
+variable
+	reel a,b,c,d,e
+debut
+	ecrire("donner les coordonnées de A)
+	lire(a,b)
+	ecrire("donner les coordonnées de B)
+	lire(c,d)
+
+	e <- racine((a - b) * (a - b) + (c - d) * (c - d))
+ 
+
+	ecrire("la distance entre A et B est egale a " , e)
+	
+fin
+
+
+algorithme partie1_Exo9
+
+variable 
+	entier h1, h2, m1, m2
+	entier hd, md
+debut
+	ecrire (" entrer horaire de départ: h min")
+	lire (h1, m1)
+	ecrire (" entrer horaire d’arrivée: h min")
+	lire (h2, m2)
+	
+	si(h2 > h1) alors
+		md <- (h2*60+m2) – (h1*60+m1)
+		hd <- md div 60 
+		md <- md mod 60 
+	sinon
+		md <- (h2*60+m2) – (h1*60+m1) + 1440
+		hd <- md div 60 
+		md <- md mod 60
+
+
+	ecrire (" la durée de vol est : ", hd , ' : ', md)
+fin
+
+
+algorithme partie1_Exo10
+
+constante
+	hs = 3600
+	ms = 60
+
+variable
+	reel heure,minute,seconde
+
+debut
+	ecrire("donner le nombre de secondes")
+	lire(seconde)
+	
+	heure <- seconde div hs
+	seconde <- seconde mod hs
+	minute <- seconde div ms
+	seconde <- seconde mod ms 
+
+	ecrire("Resultat : ", heure ,"h", minute ,"min", seconde ,"s")
+	
+fin
+
+
+algorithme partie1_Exo11
+
+constante
+	tva = 0.18
+
+variable
+	reel qt,pu,mstock,mttc
+	chaine libelle
+
+debut
+	ecrire("donner le libelle du produit")
+	lire(libelle)
+	ecrire("donner sa quantite en stock")
+	lire(qt)
+	ecrire("donner son prix unitaire")
+	lire(pu)
+	
+	mstock <- pu * qt
+	mttc <- mstock + mstock * tva 
+
+	ecrire("nom du produit : ",libelle," Sa quantite : ",qt," son prix unitaire ",pu)
+	ecrire("Son montant en stock : ",mstock," Son montant ttc ",mttc)
+
+fin
+
+
+algorithme partie1_Exo12
+
+constante
+	annee = 2023
+
+variable
+	chaine nom,prenom
+	entier age,anne_naiss
+
+debut
+	ecrire("donner votre prenom et nom")
+	lire(prenom,nom)
+	ecrire("donner votre anne de naissance")
+	lire(date_naiss)
+
+	age <- annee -  anne_naiss
+
+	ecrire(prenom," ",nom," a ",age," ans")
+
+fin
+
+
+algorithme partie1_Exo13
+
+variable
+	entier nombre
+	reel octet,kilo,mega,giga
+
+debut
+	ecrire("donner un nombre en bits")
+	lire(nombre)
+
+	octet <- nombre  / 8
+	kilo <- nombre / 1024
+	mega <- nombre / 1024 * 1024
+	giga <- nombre / 1024 * 1024 * 1024
+
+fin
+
+--------------------------------------------------------------
+					PARTIE 2
+--------------------------------------------------------------
+
+algorithme partie2_Exo1
+
+variable
+	entier valeur,Rs,Rp,r1,r2,r3
+
+debut
+	ecrire("donner les trois resistances)
+	lire(r1,r2,r3)
+
+	
+	ecrire("Donner votre choix (1 ou 2)")
+	lire(valeur)
+
+	si(valeur = 1) alors
+		Rs <- r1 + r2 + r3 
+	sinon
+		Rp <- (r1 * r2 * r3) / (r1 * r2 + r2 * r3 + r1 * r3) 
+	finsi
+
+fin
+
+algorithme partie2_Exo2
+
+variable
+	entier a,b
+	reel Resultat
+	caractere op
+
+debut
+	ecrire("donner le premier entier)
+	lire(a)
+	ecrire("donner l'operateur)
+	lire(op)
+	ecrire("donner l'autre entier)
+	lire(b)
+
+	si(op = '+') alors
+		Resultat <- a + b 
+	sinon si(op = '-') alors
+		Resultat <- a - b 
+	sinon 	si(op = '*') alors
+		Resultat <- a * b 
+	sinon
+		Resultat <- a + b 
+	finsi
+
+	ecrire(a,op,b," = ",Resultat)
+
+fin
+
+algorithme partie2_Exo3
+
+variable
+	entier a,b
+	reel x
+debut
+	ecrire("donner deux entiers")
+	lire(a,b)
+
+	si a = 0 alors
+		ecrire("pas de solution")
+	sinon 
+		x <- b / A
+		ecrire("la solution de l'equation",a,"x + ",b," = 0 est egale a ",x)
+	finsi	
+	
+fin
+
+algorithme partie2_Exo4
+
+variable
+	entier a,b,c,delta
+	reel x1,x2
+debut
+	ecrire("donner trois entiers")
+	lire(a,b,c)
+	si a = 0 et b = 0 alors
+		ecrire("pas de solution")
+	sinon si a = 0 et b != 0 alors
+		ecrire("la solution est : ",-c / b)
+	sinon
+		delta <- b*b - 4 * a * c
+		si delta < 0 alors
+			ecrire("pas de solution")
+		sinon si delta = 0
+			x1 <- -b / 2 * a
+			ecrire("l'equation admet une solution x0 = ",x1)
+		sinon
+			x1 <- (-b - racine(delta)) / 2 * a 
+			x1 <- (-b + racine(delta)) / 2 * a 
+			ecrire("l'equation admet deux solutions x1 = ",x1," et x2 = ",x2)
+		finsi
+
+fin
+
+algorithme partie2_Exo5
+
+variable
+	entier a
+	chaine jour
+
+debut
+	ecrire("entrez un chiffre entre 1 et 7")
+--------------------------------------------------------
+					si imbriques
+--------------------------------------------------------
+	si a = 1 alors
+		jour <- 'Lundi'
+	sinon si a = 2 alors
+		jour <- 'Mardi'
+	sinon si a = 3 alors
+		jour <- 'Mercredi'
+	sinon si a = 4 alors
+		jour <- 'Jeudi'
+	sinon si a = 5 alors
+		jour <- 'Vendredi'
+	sinon si a = 6 alors
+		jour <- 'Samedi'
+	sinon si a = 7 alors
+		jour <- 'Dimanche'
+	sinon
+		ecrire("veuillez entrer un chiffre entre 1 et 7")
+	finsi
+
+	ecrire(a," correspond a ",jour)
+
+	----------------------------------------------------
+					primitives cas
+	----------------------------------------------------
+	selon a faire
+		cas 1 : jour <- 'Lundi'
+		cas 2 : jour <- 'Mardi'
+		cas 3 : jour <- 'Mercredi'
+		cas 4 : jour <- 'Jeudi'
+		cas 5 : jour <- 'Vendredi'
+		cas 6 : jour <- 'Samedi'
+		cas 7 : jour <- 'Dimanche'
+		sinon : ecrire("veuillez entrer un chiffre entre 1 et 7")
+	finselon
+
+	ecrire(a," correspond a ",jour)
+
+fin
+
+algorithme partie2_Exo6
+
+variable
+	entier montant,b20,b10,b5,p2,p1
+
+debut
+	ecrire("donner un montant en euro")
+	lire(montant)
+
+	b20 <- montant div 20
+	montant <- montant mod 20
+
+	si montant != 0 alors
+		b10 <- montant div 10
+		montant <- montant mod 10
+	finsi
+
+	si montant != 0 alors
+		b5 <- montant div 5
+		montant <- montant mod 5
+	finsi
+
+	si montant != 0 alors
+		p2 <- montant div 2
+		p1 <- montant mod 2
+	finsi
+
+fin
+
+algorithme partie2_Exo7
+
+variable
+	entier a,b
+
+debut
+	ecrire("entrer deux entiers")
+	lire(a,b)
+
+	si a > b alors
+		ecrire(b," ",a) // croissant
+		ecrire(a," ",b) // decroissant
+	sinon
+		ecrire(a," ",b) // croissant
+		ecrire(b," ",a) // decroissant
+	finsi
+
+fin
+
+algorithme partie2_Exo8
+
+variable
+	entier a,b,c
+
+debut
+	ecrire("entrer trois entiers")
+	lire(a,b,c)
+
+	si a > b et a > c et b > c alors
+		ecrire(c," ",b," ",a) // croissant
+		ecrire(a," ",b," ",c) // decroissant
+
+	sinon si a > b et a > c et c > b
+		ecrire(b," ",c," ",a) // croissant
+		ecrire(a," ",c," ",b) // decroissant
+
+	sinon si b > a et b > c et a > c
+		ecrire(c," ",a," ",b) // croissant
+		ecrire(b," ",a," ",c) // decroissant
+
+	sinon si b > a et b > c et c > a
+		ecrire(a," ",c," ",b) // croissant
+		ecrire(b," ",c," ",a) // decroissant
+
+	sinon si c > a et c > b et a > b
+		ecrire(b," ",a," ",c) // croissant
+		ecrire(c," ",a," ",b) // decroissant
+	sinon
+		ecrire(a," ",b," ",c) // croissant
+		ecrire(c," ",b," ",a) // decroissant
+
+	finsi
+
+fin
+
+algorithme partie2_Exo10
+
+variable
+	entier annee
+debut
+	ecrire("donner une annee")
+	lire(annee)
+
+	si (annee mod 400 = 0) ou ((a mod 4 = 0) et (a mod 100 != 0)) alors
+		ecrire("l'annee est bissextile") 
+	sinon
+		ecrire("l'annee n'est pas bissextile")
+
+fin
+
+algorithme partie2_Exo11
+
+variable
+	entier annee,nombre,mois
+
+debut
+	ecrire("donner une annee")
+	lire(annee)
+	ecrire("donner un mois")
+	lire(mois)
+
+	selon mois faire
+		cas 1,3,5,7,8,10,12 : 
+			nombre <- 31
+		cas 2 : 
+			si (annee mod 400 = 0) ou ((a mod 4 = 0) et (a mod 100 != 0)) alors
+				nombre <- 29
+			sinon
+				nombre <- 28
+			finsi
+		cas 4,6,9,11 : 
+			nombre <- 30
+		sinon
+			ecrire("veuillez entrer un mois valide")
+	finselon
+
+	ecrire("le mois de",mois," ",annee" compte ",nombre," jours")
+
+fin
+
+algorithme partie2_Exo12
+
+variable
+	entier annee,jour,mois
+
+debut
+	ecrire(entrer le jour)
+	lire(jour)
+	ecrire(entrer le mois)
+	lire(mois)
+	ecrire(entrer l'annee)
+	lire(annee)
+
+	selon mois faire
+		cas 1,3,5,7,8,10,12 : 
+			si jour > 0 et jour <= 31 alors
+				ecrire("date valide")
+			sinon
+				ecrire("date invalide")
+			finsi
+
+		cas 4,6,9,11 : 
+			si jour > 0 et jour <= 30 alors
+				ecrire("date valide")
+			sinon
+				ecrire("date invalide")
+			finsi
+
+		cas 2 : 
+			si (annee mod 400 = 0) ou ((a mod 4 = 0) et (a mod 100 != 0)) alors
+				si jour > 0 et jour <= 29 alors
+					ecrire("date valide")
+				sinon
+					ecrire("date invalide")
+			sinon
+				si jour > 0 et jour <= 28 alors
+					ecrire("date valide")
+				sinon
+					ecrire("date invalide")
+
+		sinon
+			ecrire("veuillez entrer un mois valide")
+
+	finselon
+	
+fin
+
+algorithme partie2_Exo13
+
+variable
+	entier annee,mois,jour,
+	entier jr_lendemain,m_lendemain,a_lendemain
+debut
+	ecrire(entrer le jour)
+	lire(jour)
+	ecrire(entrer le mois)
+	lire(mois)
+	ecrire(entrer l'annee)
+	lire(annee)
+
+	selon mois faire
+		cas 1,3,5,7,8,10 :
+			si jour < 31 alors
+				jr_lendemain <- jour + 1
+			sinon si jour = 31
+				jr_lendemain <- 1
+				m_lendemain <- mois + 1
+			sinon
+				ecrire("veuillez entrer un jour correct")
+			finsi
+
+		cas 4,6,9,11 : 
+			si jour < 30 alors
+				jr_lendemain <- jour + 1
+			sinon si jour = 30
+				jr_lendemain <- 1
+				m_lendemain <- mois + 1
+			sinon
+				ecrire("veuillez entrer un jour correct")
+			finsi
+
+		cas 2 : 
+			si (annee mod 400 = 0) ou ((a mod 4 = 0) et (a mod 100 != 0)) alors
+				si jour < 29 alors
+					jr_lendemain <- jour + 1
+				sinon si jour = 29
+					jr_lendemain <- 1
+					m_lendemain <- mois + 1
+				sinon
+					ecrire("veuillez entrer un jour correct")
+				finsi
+			sinon
+				si jour < 28 alors
+					jr_lendemain <- jour + 1
+				sinon si jour = 28
+					jr_lendemain <- 1
+					m_lendemain <- mois + 1
+				sinon
+					ecrire("veuillez entrer un jour correct")
+				finsi
+			finsi
+
+		cas 12 :
+			si jour < 31 alors
+				jr_lendemain <- jour + 1
+			sinon si jour = 31
+				jr_lendemain <- 1
+				m_lendemain <- 1
+				a_lendemain <- annee + 1
+			sinon
+				ecrire("veuillez entrer un jour correct")
+			finsi
+
+		sinon
+			ecrire("veuillez entrer un mois valide")
+
+	finselon
+
+fin
+
+
+algorithme partie2_Exo16
+
+variable
+	entier annee,mois,jour,N
+	entier jr_precedent,m_precedent,a_precedent
+debut
+	ecrire(entrer le jour)
+	lire(jour)
+	ecrire(entrer le mois)
+	lire(mois)
+	ecrire(entrer l'annee)
+	lire(annee)
+	ecrire("donner le nombre de jours precedents")
+	lire(N)
+
+	selon mois faire
+		cas 5,7,8,10,12 :
+			si jour > N alors
+				jr_precedent <- jour - N
+			sinon si jour = N
+				jr_precedent <- 1
+			sinon
+				jr_precedent <- 30 + jour - N
+				m_precedent <- mois - 1
+			finsi
+
+		cas 2,4,6,9,11 : 
+			si jour > N alors
+				jr_precedent <- jour - N
+			sinon si jour = N
+				jr_precedent <- 1
+			sinon
+				jr_precedent <- 31 + jour - N
+				m_precedent <- mois - 1
+			finsi
+
+		cas 3 : 
+			si (annee mod 400 = 0) ou ((a mod 4 = 0) et (a mod 100 != 0)) alors
+				si jour > N alors
+					jr_precedent <- jour - N
+				sinon si jour = N
+					jr_precedent <- 1
+				sinon
+					jr_precedent <- 29 + jour - N
+					m_precedent <- mois - 1
+				finsi
+
+			sinon
+				si jour > N alors
+					jr_precedent <- jour - N
+				sinon si jour = N
+					jr_precedent <- 1
+				sinon
+					jr_precedent <- 28 + jour - N
+					m_precedent <- mois - 1
+				finsi
+			finsi
+
+		cas 1 :
+			si jour > N alors
+				jr_precedent <- jour - N
+			sinon si jour = N
+				jr_precedent <- 1
+			sinon
+				jr_precedent <- 31 + jour - N
+				m_precedent <- mois - 1
+				a_precedent <- annee - 1
+			finsi
+
+		sinon
+			ecrire("veuillez entrer un mois valide")
+
+	finselon
+	
+	ecrire(“date des ”,N,” jours precedents”,jr_precedent,m_precedent,a_precedent)
+fin
+
+algorithme partie2_Exo17
+
+variable
+	entier prix,TN
+	chaine Q
+
+debut
+	ecrire("Donner le tarif normal")
+	lire(TN)
+	ecrire("entrer la qualite de l'abonné")
+	lire(Q)
+
+	selon Q faire
+		cas 'Ancien etudiant' : 
+			prix = TN - TN * 0.15
+		cas 'etudiant' : 
+			prix = TN - TN * 0.20
+		cas 'Ancien etranger' : 
+			prix = TN + TN * 0.25
+		sinon
+			TN = TN
+	finselon
+
+	ecrire("le prix a payer est de : ",prix)
+
+fin
+
+algorithme partie2_Exo18
+
+variable
+	entier j1,j2,m1,m2,a1,a2
+
+debut
+	ecrire("donner la premiere date(jour mois annee)")
+	lire(j1,m1,a1)
+	ecrire("donner la deuxieme date(jour mois annee)")
+	lire(j1,m2,a2)
+
+	si a1 > a2 alors
+		ecrire("date 1 est superieur a date 2")
+	sinon si a1 = a2 alors
+		si m1 > m2 alors
+			ecrire("date 1 est superieur a date 2")
+		sinon si m1 = m2
+			si j1 > j2 alors
+				ecrire("date 1 est superieur a date 2")
+			sinon si j1 = j2 alors
+				ecrire("les deux dates sont les meme")
+			sinon
+				ecrire("date 2 est superieur a date 1")
+			finsi
+		sinon
+			ecrire("date 2 est superieur a date 1")
+		finsi
+	sinon
+		ecrire("date 2 est superieur a date 1")
+	finsi
+
+fin
+
+algorithme partie2_Exo19
+
+constante
+	hs = 3600
+	ms = 60
+
+variable
+	entier heure,minute,seconde,reste
+
+debut
+	ecrire("donner le nombre de secondes")
+	lire(seconde)
+	
+	si seconde > hs alors
+		heure <- seconde div hs
+		reste <- seconde mod hs
+	sinon si seconde > ms ou reste != 0 alors
+		minute <- seconde div ms
+		seconde <- seconde mod ms 
+	finsi
+
+fin
+
+algorithme partie2_Exo20
+
+variable
+	caractere sexe 
+	reel taille,poids,PI,BMI
+
+debut
+	ecrire("donner la taille ")
+	lire(taille)
+	ecrire("donner la poids ")
+	lire(poids)
+	ecrire("donner le sexe ")
+	lire(sexe)
+
+	si sexe = 'H' alors
+		PI <- (taille – 100) – (taille – 150) / 4 
+	sinon
+		PI <- (taille - 100) – (taille – 120) / 4
+	finsi
+
+	BMI <- poids / (taille / 100) * (taille / 100)
+
+	si BMI <= 27 alors
+		ecrire("normal")
+	sinon si BMI > 27 et BMI < 32 alors
+		ecrire("obese")
+	sinon
+		ecrire("malade")
+	finsi
+
+fin
+
+algorithme partie2_Exo21
+
+variable
+
+debut
+
+fin
+
+
