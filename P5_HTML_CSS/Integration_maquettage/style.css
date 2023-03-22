@@ -73,7 +73,7 @@ a {
 .div9 {
     width: 10%;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .div10 {
     width: 40%;
@@ -132,4 +132,10 @@ a {
     margin-top: 10px;
     float:left;
     margin-left:40px;
+}
+.div18 {
+    width: 99.5%;
+    height:100px;
+    background-color:#74c69d;
+    padding: 15px;
 }
