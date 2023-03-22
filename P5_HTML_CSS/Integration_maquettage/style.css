@@ -2,7 +2,7 @@ body {
     margin:auto;
 }
 .div1 {
-    width: 1890px;
+    width: 99.5%;
     height:700px;
     background-color:#74c69d;
     padding: 15px;
@@ -123,7 +123,7 @@ a {
     margin-left: 50px;
 }
 .div16 {
-    width: 100%; 
+    width: 100%;;
     background-color:#74c69d;
     height:100px;
     margin-top:100px;
