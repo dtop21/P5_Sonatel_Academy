@@ -2,7 +2,7 @@ body {
     margin:auto;
 }
 .div1 {
-    width: 99.5%;
+    width: 100%;
     height:700px;
     background-color:#74c69d;
     padding: 15px;
@@ -22,6 +22,10 @@ body {
     float: right;
     width: 35%;
     margin-top: 20px;
+    margin-right: 200px;
+}
+.div4 img {
+    display: none;
 }
 a {
     padding-left: 40px;
@@ -50,9 +54,10 @@ a {
     margin-top: 80px;
 }
 .div8 {
-    width: 80%;
+    width: 85%;
     margin: auto;
     margin-top: 20px;
+    padding: 20px;
 }
 .btn {
     width: 100%;
@@ -131,6 +136,11 @@ a {
 .img2 {
     margin-left: 50px;
 }
+.img3 {
+    width: 20%;
+    float:left;
+    margin-bottom: 50px;
+}
 .div16 {
     width: 100%;;
     background-color:#74c69d;
@@ -143,8 +153,28 @@ a {
     margin-left:40px;
 }
 .div18 {
-    width: 99.5%;
+    width: 100%;
     height:100px;
     background-color:#74c69d;
     padding: 15px;
+}
+@media (max-width:1396px) {
+    .div4 a {
+        display: none;
+    }
+    .div4 img {
+        display: block;
+    }
+    .div5 div {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .div1 {
+        width: 100%;
+        height:auto;
+        background-color:#74c69d;
+    }
+
 }
