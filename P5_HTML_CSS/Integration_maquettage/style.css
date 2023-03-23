@@ -70,6 +70,15 @@ a {
     text-align:center;
     padding: 10px;
 }
+.btn2 {
+    width: 50%;
+    background-color: black;
+    color:white;
+    font-size:20px;
+    text-align:center;
+    padding: 10px;
+    margin-bottom: 100px
+}
 .div9 {
     width: 10%;
     margin: auto;
