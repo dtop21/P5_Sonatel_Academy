@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/845105b0c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <button id="bouton" class="btn">Add New</button>
+    <div id="composant"></div>
+    <script>
+        const ajout_bouton = document.getElementById('bouton');
+        const ajout_composant = document.getElementById('composant');
+
+        function creer_composant(){
+            const icone = document.createElement('div');
+            icone.innerHTML = '<i class="fas fa-edit" style = "color:#ffffff;margin-right:10px"></i> <i class="fas fa-trash" style = "color:#ffffff;margin-right:10px"></i>';
+            icone.className = 'div1'
+
+            const message = document.createElement('textarea');
+            message.className = 'div2'
+
+            const composant = document.createElement('div');
+            composant.appendChild(icone);
+            composant.appendChild(message);
+            composant.className = 'div'
+
+            ajout_composant.appendChild(composant);
+
+            const supprimer = icone.querySelector('.fa-trash');
+            const modifier = icone.querySelector('.fa-edit');
+            supprimer.addEventListener('click', () => {
+                ajout_composant.removeChild(composant);
+            });
+            modifier.addEventListener('click', () => {
+                message.disabled = !message.disabled;
+            });
+
+        }
+
+        ajout_bouton.addEventListener('click',creer_composant);
+
+    </script>
+</body>
+</html>

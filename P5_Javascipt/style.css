@@ -1,0 +1,30 @@
+body{
+    background-color: aqua;
+}
+.div1{
+    width: 100%;
+    border: 1px solid white;
+    height: 50px;
+    text-align: end;
+    background-color: greenyellow;
+}
+.div2{
+    width: 99%;
+    border: 1px solid white;
+    height: 400px;
+}
+
+.div{
+    width: 20%;
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.btn{
+    float: right;
+    width: 10%;
+    padding: 15px;
+    background-color: greenyellow;
+    color: white;
+    font-size: 20px;
+}
