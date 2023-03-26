@@ -28,3 +28,37 @@ body{
     color: white;
     font-size: 20px;
 }
+.d{
+    width: 30%;
+    float: left;
+    padding: 30px;
+}
+.b{
+    width: 60%;
+    border: 1px solid black;
+   margin-left: 80px;
+   margin-top: 20px;
+   font-size: 15px;
+   padding: 20px;
+}
+.p1{
+    background-color: blue;
+    width: 80%;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+}
+.div11{
+    width: 30%;
+    height: 350px;
+    background-color: lightgray;
+    float: left;
+    border-radius: 5px;
+}
+.div10{
+    width: 65%;
+    height:400px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid gray;
+}

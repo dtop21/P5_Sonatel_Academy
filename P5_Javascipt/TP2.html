@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: white;">
+    <div class="div10">
+        <div id="div-gauche" class="d"></div>
+        <div class="div11">
+            <button id="bouton-gauche" class="b" style="margin-top: 120px;"><<</button>
+            <button id="bouton-droite" class="b">>></button>
+        </div>
+        <div id="div-droite" class="d"></div>
+    </div>
+    <script >
+        
+        const divGauche = document.getElementById('div-gauche');
+        const divDroite = document.getElementById('div-droite');
+        const boutonDroite = document.getElementById('bouton-droite');
+        const boutonGauche = document.getElementById('bouton-gauche');
+
+        const elements = ['Mon premier', 'Mon deuxième', 'Mon troisième', 'Mon quatrième'];
+
+        elements.forEach(function(element) {
+            const p = document.createElement('p');
+            p.textContent = element;
+            p.addEventListener('mouseover', function() {
+                p.classList.add('selected');
+                p.style.backgroundColor = "blue";
+                p.style.color = "white";
+                p.style.padding = "20px";
+                p.style.width = "80%";
+                p.style.fontSize = "20px";
+                p.style.borderRadius = "10px"
+            });
+            
+            divGauche.appendChild(p);
+        });
+
+        function Boutons() {
+            if (divGauche.children.length === 0) {
+                boutonDroite.disabled = true;
+                boutonDroite.style.backgroundColor = "lightgray"
+            } else {
+                boutonDroite.disabled = false;
+                boutonDroite.style.backgroundColor = "yellow"
+            }
+            if (divDroite.children.length === 0) {
+                boutonGauche.disabled = true;
+                boutonGauche.style.backgroundColor = "lightgray"
+            } else {
+                boutonGauche.disabled = false;
+                boutonGauche.style.backgroundColor = "yellow"
+            }
+        }
+        Boutons();
+
+        function deplacerDroite() {
+            const elementSelectionne = divGauche.querySelector('.selected');
+            if (elementSelectionne) {
+                divDroite.appendChild(elementSelectionne);
+                Boutons();
+            }
+        }
+
+        function deplacerGauche() {
+            const elementSelectionne = divDroite.querySelector('.selected');
+            if (elementSelectionne) {
+                divGauche.appendChild(elementSelectionne);
+                Boutons();
+            }
+        }
+
+        boutonDroite.addEventListener('click', deplacerDroite);
+        boutonGauche.addEventListener('click', deplacerGauche);
+
+    </script>
+</body>
+</html>
