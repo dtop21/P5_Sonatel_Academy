@@ -34,16 +34,16 @@
             const supprimer = icone.querySelector('.fa-trash');
             const modifier = icone.querySelector('.fa-edit');
 
-            supprimer.addEventListener('click', function(){
+            supprimer.onclick =  function(){
                 ajout_composant.removeChild(composant);
-            });
-            modifier.addEventListener('click', function(){
+            };
+            modifier.onclick = function(){
                 message.disabled = !message.disabled;
-            });
+            };
 
         }
 
-        ajout_bouton.addEventListener('click',creer_composant);
+        ajout_bouton.onclick = creer_composant;
 
     </script>
 </body>
