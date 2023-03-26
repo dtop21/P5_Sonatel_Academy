@@ -1,6 +1,4 @@
-body{
-    background-color: aqua;
-}
+
 .div1{
     width: 100%;
     border: 1px solid white;
@@ -62,3 +60,44 @@ body{
     padding: 20px;
     border: 2px solid gray;
 }
+.notification {
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .danger {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+  }
+  
+  .success {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+  }
+  
+  .warning {
+    background-color: rgb(201, 201, 29);
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+  }
+  
+  .info {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+  }
