@@ -18,10 +18,10 @@
     </div>
     <script >
         
-        const divGauche = document.getElementById('div-gauche');
-        const divDroite = document.getElementById('div-droite');
-        const boutonDroite = document.getElementById('bouton-droite');
-        const boutonGauche = document.getElementById('bouton-gauche');
+        const div1 = document.getElementById('div-gauche');
+        const div2 = document.getElementById('div-droite');
+        const bouton1 = document.getElementById('bouton-droite');
+        const bouton2 = document.getElementById('bouton-gauche');
 
         const elements = ['Mon premier', 'Mon deuxième', 'Mon troisième', 'Mon quatrième'];
 
@@ -38,45 +38,45 @@
                 p.style.borderRadius = "10px"
             });
             
-            divGauche.appendChild(p);
+            div1.appendChild(p);
         });
 
         function Boutons() {
-            if (divGauche.children.length === 0) {
-                boutonDroite.disabled = true;
-                boutonDroite.style.backgroundColor = "lightgray"
+            if (div1.children.length === 0) {
+                bouton1.disabled = true;
+                bouton1.style.backgroundColor = "lightgray"
             } else {
-                boutonDroite.disabled = false;
-                boutonDroite.style.backgroundColor = "yellow"
+                bouton1.disabled = false;
+                bouton1.style.backgroundColor = "yellow"
             }
-            if (divDroite.children.length === 0) {
-                boutonGauche.disabled = true;
-                boutonGauche.style.backgroundColor = "lightgray"
+            if (div2.children.length === 0) {
+                bouton2.disabled = true;
+                bouton2.style.backgroundColor = "lightgray"
             } else {
-                boutonGauche.disabled = false;
-                boutonGauche.style.backgroundColor = "yellow"
+                bouton2.disabled = false;
+                bouton2.style.backgroundColor = "yellow"
             }
         }
         Boutons();
 
         function deplacerDroite() {
-            const elementSelectionne = divGauche.querySelector('.selected');
+            const elementSelectionne = div1.querySelector('.selected');
             if (elementSelectionne) {
-                divDroite.appendChild(elementSelectionne);
+                div2.appendChild(elementSelectionne);
                 Boutons();
             }
         }
 
         function deplacerGauche() {
-            const elementSelectionne = divDroite.querySelector('.selected');
+            const elementSelectionne = div2.querySelector('.selected');
             if (elementSelectionne) {
-                divGauche.appendChild(elementSelectionne);
+                div1.appendChild(elementSelectionne);
                 Boutons();
             }
         }
 
-        boutonDroite.addEventListener('click', deplacerDroite);
-        boutonGauche.addEventListener('click', deplacerGauche);
+        bouton1.addEventListener('click', deplacerDroite);
+        bouton2.addEventListener('click', deplacerGauche);
 
     </script>
 </body>
