@@ -41,6 +41,11 @@
                 message.disabled = !message.disabled;
             };
 
+            message.addEventListener('input', function(){
+            icone.style.backgroundColor = 'red';
+            });
+
+
         }
 
         bouton.onclick = creer_composant;

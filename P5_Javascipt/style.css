@@ -54,11 +54,12 @@
     border-radius: 5px;
 }
 .div10{
-    width: 65%;
+    width: 70%;
     height:400px;
     margin: auto;
     padding: 20px;
-    border: 2px solid gray;
+    margin-top: 200px;
+    box-shadow: 0 0 2em black;
 }
 .notification {
     padding: 10px;
