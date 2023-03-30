@@ -14,5 +14,57 @@
     <button id="avertissement" class="warning">Avertissement</button>
     <button id="info" class="info">Info</button>
     <div id="notifications"></div>
+
+    <script >
+
+        var danger = document.getElementById("danger");
+        var succes = document.getElementById("success");
+        var avertissement = document.getElementById("avertissement");
+        var info = document.getElementById("info");
+        var notifications = document.getElementById("notifications");
+
+        danger.addEventListener("click", function() {   
+            var notification = document.createElement("div");
+            notification.innerHTML = '<i class="fa-solid fa-triangle-exclamation fa-flip" style="color: #ffffff;"></i> ATTENTION';
+            notification.classList.add("notification", "danger");
+            notifications.appendChild(notification);
+            setTimeout(function() {
+                notifications.removeChild(notification);
+            }, 2000);
+        });
+
+        succes.addEventListener("click", function() {   
+            var notification = document.createElement("div");
+            notification.innerHTML = '<i class="fa-solid fa-check fa-beat" style="color: #ffffff;"></i> REUSSI';
+            notification.classList.add("notification", "success");
+            notifications.appendChild(notification);
+            setTimeout(function() {
+                notifications.removeChild(notification);
+            }, 2000);
+        });
+
+        avertissement.addEventListener("click", function() {   
+            var notification = document.createElement("div");
+            notification.innerHTML = '<i class="fa-solid fa-triangle-exclamation fa-beat" style="color: #ffffff;"></i> AVERTISSEMENT';
+            notification.classList.add("notification", "warning");
+            notifications.appendChild(notification);
+            setTimeout(function() {
+                notifications.removeChild(notification);
+            }, 2000);
+        });
+
+        info.addEventListener("click", function() {   
+            var notification = document.createElement("div");
+            notification.innerHTML = '<i class="fa-sharp fa-solid fa-circle-info fa-beat" style="color: #ffffff;"></i> information';
+            notification.classList.add("notification", "info");
+            notifications.appendChild(notification);
+            setTimeout(function() {
+                notifications.removeChild(notification);
+            }, 2000);
+        });
+
+    </script>
+
+
 </body>
 </html>
