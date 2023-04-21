@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-image: url('icone4.jpeg');">
+
+    <div style="width: 55%;margin:auto;margin-top:350px;color:white">
+        <h1  style="font-size:80px">On sera en 2024 dans : </h1>
+        <h1 id="compte_a_rebours" style="font-size:85px"></h1>
+    </div>
+    <script>
+
+        const affichage = document.getElementById("compte_a_rebours");
+
+        var cible = new Date("January 1, 2024 00:00:00").getTime();
+
+        var compte_a_rebours = setInterval(function() {
+
+            var maintenant = new Date().getTime();
+
+            var difference = cible - maintenant;
+
+            var jours = Math.floor(difference / (1000 * 60 * 60 * 24));
+            var heures = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            var secondes = Math.floor((difference % (1000 * 60)) / 1000);
+
+            affichage.innerHTML = jours + "j - " + heures + "h - "
+            + minutes + "m - " + secondes + "s ";
+
+        }, 1000);
+
+    </script>
+</body>
+</html>

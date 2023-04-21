@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/845105b0c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="div90">
+        <h1 id="question"></h1>
+        <div class="div100">
+        <input type="radio" value="a" name="radio" id="radio1"/> <span id="a"></span><br>
+       <input type="radio" value="b" name="radio" id="radio2"/> <span id="b"></span><br>
+       <input type="radio" value="c" name="radio" id="radio3"/> <span id="c"></span><br>
+       <input type="radio" value="d" name="radio" id="radio4"/> <span id="d"></span><br>
+      </div>
+        <button id="next">Suivant</button>
+        <button id="rejouer">Rejouer</button>
+      </div>
+
+  <script >
+    const questions = [
+    {
+      question: "Quel est le Meilleur Langage de Programmation en 2022",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d"
+    },
+    {
+      question: "Quel est le Meilleur Langage de Programmation en 2022",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d"
+    },
+    {
+      question: "Quel est le Meilleur Langage de Programmation en 2022",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d"
+    },
+    {
+      question: "Quel est le Meilleur Langage de Programmation en 2022",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d"
+    },
+    {
+      question: "Quel est le Meilleur Langage de Programmation en 2022",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d"
+    }
+  ];
+  
+  let x = 0;
+  let score = 0;
+  console.log(questions[0])
+  const questionEl = document.getElementById("question");
+  const option_a = document.getElementById("a");
+  const option_b = document.getElementById("b");
+  const option_c = document.getElementById("c");
+  const option_d = document.getElementById("d");
+  const nextBtn = document.getElementById("next");
+  const rejouer = document.getElementById("rejouer");
+  const radio1 = document.getElementById('radio1');
+  const radio2 = document.getElementById('radio2');
+  const radio3 = document.getElementById('radio3');
+  const radio4 = document.getElementById('radio4');
+  
+  function Question() {
+    const q = questions[x];
+    questionEl.textContent = q.question;
+    option_a.textContent = q.a;
+    option_b.textContent = q.b;
+    option_c.textContent = q.c;
+    option_d.textContent = q.d;
+    rejouer.style.display = "none";
+  }
+  
+  function Reponse(rep) {
+    if (rep == questions[x].correct) {
+      score++;
+    }
+  }
+  
+  function Score() {
+    questionEl.textContent = `Votre score est de ${score} sur ${questions.length}`;
+    option_a.style.display = "none";
+    option_b.style.display = "none";
+    option_c.style.display = "none";
+    option_d.style.display = "none";
+    nextBtn.style.display = "none";
+    rejouer.style.display = "block";
+    radio1.style.display = "none";
+    radio2.style.display = "none";
+    radio3.style.display = "none";
+    radio4.style.display = "none";
+  }
+  
+  nextBtn.addEventListener("click", () => {
+    const rep = document.querySelector("input[type=radio]:checked");
+    if (!rep) {
+      return;
+    }
+
+    Reponse(rep.value);
+    rep.checked = false;
+    x++;
+    
+    if (x == questions.length) {
+      Score();
+    } else {
+      Question();
+    }
+    
+  });
+
+  rejouer.addEventListener("click",function(){
+    x = 0;
+    score = 0;
+    questionEl.style.display ="block"
+    option_a.style.display = "inline";
+    option_b.style.display = "inline";
+    option_c.style.display = "inline";
+    option_d.style.display = "inline";
+    nextBtn.style.display = "inline";
+    rejouer.style.display = "none";
+    radio1.style.display = "inline";
+    radio2.style.display = "inline";
+    radio3.style.display = "inline";
+    radio4.style.display = "inline";
+
+    showQuestion();
+  })
+  
+  Question();
+  
+
+  </script>
+
+</body>
+</html>
