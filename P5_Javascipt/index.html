@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="garde.js"></script>
+    <style>
+        body{
+            margin: auto;
+        }
+        .div0{
+            height: 450px;
+            padding: 30px;
+            background-image: url('icone6.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .div1{
+            color:whitesmoke;
+            font-weight: bold;
+            font-size: 100px;
+            letter-spacing: 50px;
+        }
+        .div2{
+            width: 50%;
+            padding: 30px;
+            margin: auto;
+        }
+        .div2 img{
+            margin-top: 100px;
+            width: 100%;
+            height: 400px;
+            background-color: transparent;
+        }
+        a{
+            color: white;
+            background-color: black;
+            padding: 15px;
+            font-size: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin-left: 100px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .div3{
+            height: 100px;
+            padding: 30px;
+            background-image: url('icone9.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+.root {
+   width: 25%;
+    padding: 20px;
+    float: left;
+   margin-left: 120px;
+  }
+  
+  .container {
+    position : relative;
+    
+    width: 300px;
+    min-height: calc(3rem + 20px);
+    height: calc(3rem + 20px);
+  
+    line-height: 1.1rem;
+    
+    border: 1px solid black;
+    border-radius : 6px;
+    
+    padding : 10px;
+    margin-bottom: 40px;
+  }
+  
+  .container.opened {
+    height : fit-content;
+  }
+  
+  .container > p {
+    margin : 0;
+    
+    height : 100%;
+    
+    overflow: hidden;
+  }
+  
+  .container::before {
+    content : "Voir plus";
+    font-weight: bold;
+    position : absolute;
+    bottom : 10px;
+    right : 10px;
+    padding-left : 50px;
+    background : linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,100%) 50px);;
+  }
+  
+  .container.opened::before {
+    content : "Voir moins";
+    font-weight: bold;
+  }
+  .p5{
+    color: black;
+    font-weight:lighter;
+    font-size: 50px;
+    float: right;
+    letter-spacing: 10px;
+  }
+  
+  
+       
+    </style>
+</head>
+<body >
+    <div class="div0">
+        <div class="div1">
+            DATA
+        </div>
+        <div class="div1">
+            SCIENCE
+        </div>
+    </div>
+    <div class="div2">
+        <img src="icone8.png" >
+    </div>
+    <div style="height: 1000px;">
+      <div class="root">
+        <h1>TP 1</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            Créer le script permettant d’effectuer les actions suivantes : <br>
+            1) Créer ce composant lorsqu’on clique Add New <br>
+            NB : Le composant à générer est formé : <br>
+            ● un div contenant les icônes edit et la corbeille <br>
+            ● un champ Textarea <br>
+            2) Lorsqu’on clique sur l'icône corbeille, le composant généré est supprimé <br>
+            3) Lorsqu’on clique sur l'icône edit,le champ Textarea correspondant est désactivé et si <br>
+            on clique une deuxième fois le Textarea correspondant est activé 
+          </p>
+        </div>
+        <a href="TP1.html">Resultat</a>
+    </div>
+    
+    <div class="root">
+        <h1> TP 2</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            Créer le script permettant d’effectuer les actions suivantes : <br>
+            1) Créer deux div et deux boutons de direction qui permettent de déplacer les éléments <br>
+            de la gauche vers la droite ou de la droite vers la gauche <br>
+            2) div gauche <br>
+            a) Définir un tableau de 4 éléments (Mon Premier,....)<br>
+            b) Générés dynamiquement des p à l'aide du tableau défini dans le a)<br>
+            c) Au survol d’un élément il est sélectionné comme indiqué ci-dessous3) Le button >><br>
+            a) Ce bouton est activé lorsque le div gauche contient des éléments sinon il<br>
+            est désactivé<br>
+            b) Au clique de ce bouton , on déplace l'élément sélectionné dans div droite et<br>
+            on le supprime de la div gauche.<br>
+            4) Le button <<<br>
+            a) Ce bouton est activé lorsque le div droite contient des éléments sinon il est
+            désactivé.<br>
+            b) Au clique de ce bouton , on déplace l'élément sélectionné dans div gauche<br>
+            et on le supprime de la div droite.
+          </p>
+        </div>
+        <a href="TP2.html">Resultat</a>
+    </div>
+    
+    <div class="root">
+        <h1>TP3</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            1. Générer des notifications en fonction de la couleur du bouton
+            2. Les notifications s’affichent en pile et on une durée de 1 seconde
+          </p>
+        </div>
+        <a href="TP3.html">Resultat</a>
+    </div>
+    
+    <div class="root">
+        <h1>TP 4</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            Objectif est de Générer un mot de passe :
+            L’utilisateur devra indiquer la longueur du mot de passe mais par défaut la
+            valeur est de 15 caractères
+            L’utilisateur devra indiquer le format du Mot de passe en cochant soit :
+            ■ Lettres Majuscules
+            ■ Lettres Minuscules
+            ■ Les Nombres
+            ■ Caractères spéciaux
+            Une fois les critères de cocher ,l’utilisateur devra cliquer sur le bouton
+            Générer Mot de passe puis afficher ce mot de passe dans la zone de texte.
+            Contraintes
+            La Longueur du mot de passe est compris entre 15 et 20 caractères
+            On devra cocher au moins un critère
+            Le bouton générer mot de passe est désactivée par défaut et est vérifié
+            lorsque ces critères sont vérifiés
+            Après la Génération du Mot de passe et dès qu’on survole le champ de texte , le tooltip
+            copy est affiché pour pouvoir copier le mot de passe saisi.
+          </p>
+        </div>
+        <a href="TP4.html">Resultat</a>
+    </div>
+    
+    <div class="root">
+        <h1>TP 5</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            Mettre en place un Jeu de Quizz(Jeu de Question/Réponse)
+            1) Définir un tableau de questions.
+            Exemple de questions
+            {
+            question: "Quel est le Meilleur
+            Langage de Programmation en
+            2022",
+            a: "Java",
+            b: "C,
+            c: "Python",
+            d: "JavaScript",
+            correct: "d"
+            }
+            NB: Le Tableau devra contenir au moins 5 questions
+            2) Le Jeu affiche une suite de question comme suit :
+            Le Joueur doit cocher une seule réponse et dès qu’il donne la bonne
+            réponse son score est incrémenté de plus 1.
+            Le bouton Suivant est désactivé tant que le joueur n’a pas coché une
+            réponse.
+            Au clique du bouton Suivant , on affiche la question suivante du tableau de
+            questions.
+            Lorsqu'on arrive à la dernière question du tableau ,on affiche le score obtenu
+            par le Joueur.
+          </p>
+        </div>
+        <a href="TP5.html">Resultat</a>
+    </div>
+    
+    <div class="root">
+        <h1>TP 6</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            1. Créer un compte rebours qui affiche à la seconde le nombre de jours,heures,minutes
+            et secondes restants pour être en 2024.
+          </p>
+        </div>
+        <a href="TP6.html">Resultat</a>
+    </div>
+    
+    <div class="root">
+        <h1> TP 7</h1>
+        <div class="container" onclick="handleClickViewMore(this)">
+          <p>
+            Soit les informations de l’API Themoviedb
+            const APIURL =
+            "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c357
+            31a5ee918f014970082a0088b1&page=1";
+            const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+            const SEARCHAPI =
+            "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b
+            1&query=";
+            TAF :
+            1. Afficher le catalogue de film provenant de l’api comme suit
+            2. Au survol d’un film on aura la description du film
+            3. Champ de recherche qui permet de rechercher un film par nom
+          </p>
+        </div>
+        <a href="TP7.html">Resultat</a>
+    </div>
+    </div>
+
+
+
+<div class="div3">
+  <div class="p5">
+      P5 SONATEL ACADEMY
+  </div>
+</div>
+    
+</body>
+</html>
